@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
+import Image from 'next/image';
 import { Project } from '@/lib/data';
 import Link from 'next/link';
 
