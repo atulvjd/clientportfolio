@@ -25,7 +25,7 @@ export function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
           
           {/* Timeline line (not last item) */}
           {idx !== experiences.length - 1 && (
-            <div className="absolute left-[0.438rem] top-8 h-16 sm:h-20 w-0.5 bg-gradient-to-b from-accent/50 to-accent/0" />
+            <div className="absolute left-[0.438rem] top-8 bottom-0 w-0.5 bg-gradient-to-b from-accent/50 to-accent/0" />
           )}
 
           {/* Content */}
