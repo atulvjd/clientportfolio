@@ -24,6 +24,7 @@ export default function Home() {
             title="Building AI Systems & Modern Software"
             subtitle="Welcome"
             description="Designing beautiful digital experiences with cutting-edge technology and thoughtful engineering."
+            image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
             span="large"
             delay={0}
           />
