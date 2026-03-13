@@ -67,6 +67,7 @@ export default function Projects() {
                 key={project.id}
                 title={project.title}
                 description={project.description}
+                image={project.image}
                 tags={project.technologies}
                 link={`#${project.id}`}
                 delay={idx * 0.05}
