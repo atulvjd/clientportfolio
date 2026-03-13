@@ -253,4 +253,53 @@ export const portfolioData = {
     { label: 'Happy Clients', value: '25+' },
     { label: 'GitHub Stars', value: '2.5K' },
   ],
+  testimonials: [
+    {
+      id: '1',
+      name: 'Sarah Johnson',
+      role: 'CTO at TechFlow',
+      content: 'Alex is an exceptional developer who consistently delivers high-quality code. His ability to understand complex requirements and translate them into scalable solutions is impressive.',
+      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop',
+    },
+    {
+      id: '2',
+      name: 'Michael Chen',
+      role: 'Product Manager',
+      content: 'Working with Alex was a pleasure. He brings a unique perspective to problem-solving and always keeps the user experience in mind. Highly recommended!',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop',
+    },
+    {
+      id: '3',
+      name: 'Emily Davis',
+      role: 'Founder, DesignCo',
+      content: 'The attention to detail in Alex\'s work is outstanding. He perfectly implemented our design system and improved the performance significantly.',
+      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1887&auto=format&fit=crop',
+    },
+  ],
+  services: [
+    {
+      id: '1',
+      title: 'Web Development',
+      description: 'Building modern, responsive, and performant web applications using the latest technologies like React, Next.js, and TypeScript.',
+      icon: 'Monitor',
+    },
+    {
+      id: '2',
+      title: 'Mobile Development',
+      description: 'Creating native-like mobile experiences for iOS and Android using React Native and Flutter.',
+      icon: 'Smartphone',
+    },
+    {
+      id: '3',
+      title: 'Backend Systems',
+      description: 'Designing and implementing scalable backend architectures, RESTful APIs, and database solutions.',
+      icon: 'Server',
+    },
+    {
+      id: '4',
+      title: 'UI/UX Implementation',
+      description: 'Translating design concepts into interactive and pixel-perfect user interfaces.',
+      icon: 'Layout',
+    },
+  ],
 };
