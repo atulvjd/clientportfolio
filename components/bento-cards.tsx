@@ -4,8 +4,15 @@ import { ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Monitor, Smartphone, Server, Layout, Quote } from 'lucide-react';
 import { BentoCard } from './bento-grid';
+
+const iconMap: Record<string, any> = {
+  Monitor,
+  Smartphone,
+  Server,
+  Layout,
+};
 
 export function HeroCard({
   title,
@@ -194,6 +201,62 @@ export function TextCard({
         )}
       </div>
       {children}
+    </BentoCard>
+  );
+}
+
+export function ServiceCard({
+  title,
+  description,
+  icon,
+  delay = 0,
+}: {
+  title: string;
+  description: string;
+  icon: string;
+  delay?: number;
+}) {
+  const Icon = iconMap[icon] || Monitor;
+  
+  return (
+    <BentoCard delay={delay} className="flex flex-col h-full hover:border-primary/50 transition-colors">
+      <div className="mb-4 p-3 bg-primary/10 w-fit rounded-lg text-primary">
+        <Icon size={24} />
+      </div>
+      <h3 className="text-lg sm:text-xl font-bold mb-2">{title}</h3>
+      <p className="text-sm text-muted-foreground">{description}</p>
+    </BentoCard>
+  );
+}
+
+export function TestimonialCard({
+  name,
+  role,
+  content,
+  avatar,
+  delay = 0,
+}: {
+  name: string;
+  role: string;
+  content: string;
+  avatar: string;
+  delay?: number;
+}) {
+  return (
+    <BentoCard delay={delay} className="flex flex-col h-full justify-between">
+      <div className="mb-4">
+        <Quote className="text-primary/50 mb-2" size={24} />
+        <p className="text-sm sm:text-base italic text-muted-foreground">"{content}"</p>
+      </div>
+      <div className="flex items-center gap-3">
+        <div className="relative w-10 h-10 rounded-full overflow-hidden">
+          <Image src={avatar} alt={name} fill className="object-cover" />
+        </div>
+        <div>
+          <p className="font-semibold text-sm">{name}</p>
+          <p className="text-xs text-muted-foreground">{role}</p>
+        </div>
+      </div>
     </BentoCard>
   );
 }
