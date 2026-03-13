@@ -20,11 +20,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
       className="group glass rounded-xl overflow-hidden cursor-pointer h-full flex flex-col"
     >
       {/* Project Image */}
-      <div className="relative h-48 sm:h-56 bg-gradient-to-br from-primary/20 to-accent/20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 group-hover:opacity-0 transition-opacity duration-300" />
-        <div className="absolute inset-0 flex items-center justify-center text-foreground/30">
-          <div className="text-5xl font-bold opacity-20">{project.id}</div>
-        </div>
+      <div className="relative h-48 sm:h-56 bg-muted overflow-hidden">
+        {project.image ? (
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+             <div className="text-5xl font-bold opacity-20 text-foreground/30">{project.id}</div>
+          </div>
+        )}
       </div>
 
       {/* Content */}
