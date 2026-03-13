@@ -11,6 +11,8 @@ import {
   SkillCard,
   ProjectBentoCard,
   TextCard,
+  ServiceCard,
+  TestimonialCard,
 } from '@/components/bento-cards';
 
 export default function Home() {
@@ -41,6 +43,22 @@ export default function Home() {
         </BentoGrid>
       </section>
 
+      {/* Services Section */}
+      <section className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 mb-16 sm:mb-24 md:mb-32">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12">What I Do</h2>
+        <BentoGrid>
+          {portfolioData.services?.map((service, idx) => (
+            <ServiceCard
+              key={service.id}
+              title={service.title}
+              description={service.description}
+              icon={service.icon}
+              delay={idx * 0.1}
+            />
+          ))}
+        </BentoGrid>
+      </section>
+
       {/* Featured Projects Section */}
       <section className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 mb-16 sm:mb-24 md:mb-32">
         <div className="flex items-center justify-between gap-4 mb-12">
@@ -62,6 +80,7 @@ export default function Home() {
               key={project.id}
               title={project.title}
               description={project.description}
+              image={project.image}
               tags={project.technologies}
               link={`/projects#${project.id}`}
               delay={idx * 0.1}
@@ -80,6 +99,23 @@ export default function Home() {
               key={skillGroup.category}
               category={skillGroup.category}
               skills={skillGroup.items}
+              delay={idx * 0.1}
+            />
+          ))}
+        </BentoGrid>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 mb-16 sm:mb-24 md:mb-32">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12">Client Testimonials</h2>
+        <BentoGrid>
+          {portfolioData.testimonials?.map((testimonial, idx) => (
+            <TestimonialCard
+              key={testimonial.id}
+              name={testimonial.name}
+              role={testimonial.role}
+              content={testimonial.content}
+              avatar={testimonial.avatar}
               delay={idx * 0.1}
             />
           ))}
